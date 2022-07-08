@@ -1,0 +1,30 @@
+1. Jacoco ( EclEmma Java Code Coverage) installed in Eclipse
+    help->Eclipse Marketplace
+
+2. Buildship Gradle Interation is installed in Eclipse
+
+3. Configure Jacoco Test report in build.gradle file
+    see this file.
+
+4. After build done, coverage test report is generated under
+
+    working folder\lib\build\reports\jacoco\test\html\index.html
+
+5. To show test coverage in Eclipse UI
+
+   1) Show coverage report:
+      Window->Show view->Other->Java->Coverage
+
+   2) Configure coverage display:
+      Right click project->Coverage As->Coverage configuration
+      ->Select test class
+
+   3) Run test to show test coverage:
+      Right click project -> Coverage As ->JUnit Test
+      green color -  covered.
+      red color  - not covered. 
+  
+Note:  generate Jacoco test report and show test coverage report are
+       not running method, they are not got at the one time.
+
+
