@@ -1,0 +1,16 @@
+In this example, the ToDoBusinessStub depends on the ToDoService interface, 
+so we have created a stub named ToDoServiceStub that returns dummy values. 
+
+The ToDoServiceStub is nothing, but a real Java class. 
+
+There are a lot of maintenance problems using stubs. 
+
+For example, if we want to add a new method or delete an existing method to/from the ToDoService interface,
+we need to keep track on the stub related to this interface. 
+
+Another problem with stubs is the dynamic conditions that makes the code more complicated.
+
+Stubs are useful in simple projects and scenarios, but in complex scenarios, 
+we need something more dynamic than stubs. 
+
+To overcome the drawbacks, mocks came into play instead of stubs.

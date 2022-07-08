@@ -1,0 +1,91 @@
+About Mockito
+==============
+Mockito is a mocking framework. 
+It is a Java-based library used for unit testing of java application.
+It can also be used with other frameworks such as JUnit and TestNG.
+
+The main purpose of using the Mockito framework is to simplify 
+the development of a test by mocking external dependencies and
+use them in the test code.
+
+What is Mocking
+~~~~~~~~~~~~~~~
+Mocking is a testing technique where mock objects are used 
+instead of real objects for testing purposes. 
+
+Mock objects provide a specific (dummy) output 
+for a particular (dummy) input passed to it.
+
+Need for mocking
+~~~~~~~~~~~~~~~~
+1. If we want to test a component that depends on the other component, 
+   but it is under development.
+
+2. The real components perform slow operations.
+   such as dealing with database connections or another complex read/ write operation.
+
+3. If there is an infrastructure concern that makes the testing impossible.
+
+Stub
+~~~~~~~
+There are a lot of maintenance problems using stubs. 
+
+1) If we want to add a new method or delete an existing method to/from 
+a class or interface, we need to keep track on the stub related to this class or interface.
+
+2) Another problem with stubs is the dynamic conditions that makes the code more complicated.
+
+Stubs are useful in simple projects and scenarios, but in complex scenarios, 
+we need something more dynamic than stubs. 
+
+To overcome the drawbacks, mocks came into play instead of stubs.
+
+
+Methods of Mockito
+~~~~~~~~~~~~~~~~~~
+1. Mock()
+It is used to create mock objects of a given class or interface.
+e.g:  ToDoService doService = mock(ToDoService.class);
+
+2. when()
+It should be used when we want to mock to return specific values 
+when particular methods are called. This method is not implemented yet.
+
+e.g: when(mock.someCode ()).thenReturn(5);  
+
+3. verify()
+The verify() method is used to check whether some specified methods are called
+ or not.  It validates the certain behavior that happened once in a test.
+
+This type of testing is sometimes known as behavioral testing. It checks that
+a method is called with the right parameters instead of checking the result of 
+a method call.
+
+The verify() method is also used to test the number of invocations.
+
+
+e.g: 1) //Check the specified method deleteTodos() is invoked or not.  
+       verify(doService).deleteTodos("Use Spring MVC");
+          
+
+     2)  //Check a method is never called.
+        verify(doService, never()).deleteTodos("Use Hibernate");
+
+     3)  //Check how many times a specific method is called.
+        verify(doService, times(1)).deleteTodos("Use Spring MVC");
+
+4. spy()
+Mockito provides a method to partially mock an object, which is known as the spy method. 
+When using the spy method, there exists a real object.   
+
+If we don't mock a method using spy, it will call the real method behavior. 
+   
+It means spy() method allows us to keep track of what is happening 
+with the real object as well as allow us to overrides a specific method behavior.
+
+
+Reference web link
+~~~~~~~~~~~~~~~~~~
+https://www.javatpoint.com/mockito
+
+Provides basics and examples of Mokito
